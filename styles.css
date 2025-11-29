@@ -1,6 +1,7 @@
 body{
     font-family: system-ui;
     background-color: #33203b;
+    background-image: opacity(0.5);
     color: white;
     display: flex;
     flex-direction: column;
@@ -8,18 +9,56 @@ body{
     text-align: center;
 }
 
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('images/math.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: brightness(0.5) blur(2px);  /* <-- your filter goes here */
+    z-index: -1;
+}
+
 
 ul {
     list-style-type: none;
-    text-align: left;
+    text-align: center;
     color: rgb(255, 255, 255);
     background-color: rgba(255, 255, 255, 0.347);
     border-radius: 14px;
-    border: transparent 10px solid;
+    border: transparent 2px solid;
+    width: 350px;
     padding: 25px;
     background-image: 
     radial-gradient(circle at 50% 250%,rgb(255, 255, 255), transparent),
     linear-gradient(rgba(203, 154, 154, 0.249), rgba(191, 0, 255, 0.675));
     background-origin: padding-box, border-box;
     background-clip: padding-box, border-box;
+}
+
+li a{
+    text-decoration: none;
+}
+
+li a:hover {
+    color: yellow;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+iframe {
+    border: none;
+    border-radius: 14px;
+}
+
+p {
+    max-width: 400px;
 }
