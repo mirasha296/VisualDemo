@@ -169,3 +169,8 @@ p {
 .demo-preview-wrap:hover .demo-overlay {
     background: rgba(0, 0, 0, 0.35);
 }
+
+.graphs a{
+    color: white;
+    text-decoration: none;
+}
