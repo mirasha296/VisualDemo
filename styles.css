@@ -1,3 +1,4 @@
+
 body{
     font-family: system-ui;
     background-color: #33203b;
@@ -22,7 +23,14 @@ body::before {
     z-index: -1;
 }
 
-
+hr {
+    width: 80%;
+    border: 1px solid rgb(244, 201, 60);
+    
+}
+h2 {
+    color: rgb(255, 209, 58);
+}
 ul {
     list-style-type: none;
     text-align: center;
@@ -30,7 +38,7 @@ ul {
     background-color: rgba(255, 255, 255, 0.347);
     border-radius: 14px;
     border: transparent 2px solid;
-    width: 350px;
+    width: auto;
     padding: 25px;
     background-image: 
     radial-gradient(circle at 50% 250%,rgb(255, 255, 255), transparent),
@@ -41,6 +49,7 @@ ul {
 
 li a{
     text-decoration: none;
+    color: rgb(18, 66, 169);
 }
 
 li a:hover {
@@ -61,4 +70,5 @@ iframe {
 
 p {
     max-width: 400px;
+    color: white;
 }
