@@ -5,8 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <style>
+    html, body, a-scene {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    strong {
+        color: rgb(255, 209, 58);
+    }
+    /* Back button above everything */
+    .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 999999;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 8px 14px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        transition: background 0.2s;
+        width: fit-content;
+    }
+
+    .back-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Navigation box under the button */
+    .ui {
+        position: fixed;
+        top: 65px; /* pushes it slightly below the Back button */
+        left: 20px;
+        z-index: 999998;
+        padding: 15px 20px;
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        max-width: 320px;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+    }
+
+    .ui h3 {
+        margin-top: 0;
+    }
+</style>
 </head>
 <body>
+    <div class="back-btn" onclick="goBack()">⟵ Back</div>
+
+     <div class="ui">
+        <h3>Navigation</h3>
+        <p>Use <strong>W</strong>, <strong>A</strong>, <strong>S</strong>, <strong>D</strong> to move around the scene.</p>
+        <p>You are viewing a 3D environment created using A-Frame. Use the camera controls to explore the landscape from above.</p>
+
+        <br>
+
+        <h3>
+        Scene Description
+        </h3>
+
+        <p> This is a roundabout; if cities and urban areas were to implement such designs, it could improve traffic flow and reduce congestion.</p>
+    </div>
+
+    
+
     <a-scene>
 
         <a-camera
@@ -14,7 +82,7 @@
         rotation="-45 0 0">
         </a-camera>
         
-        <a-sky color="#87CEEB">
+        <a-sky color="#200040">
         </a-sky>
         <!-- ground & road -->
         <a-cylinder
@@ -56,10 +124,41 @@
             height="0.6" 
         ></a-cone>
 
-        <!-- car -->
-        
+        <a-box 
+            position="0 1 -3" 
+            depth="50" 
+            width="50"
+            height="0.1"
+            color=" darkgreen"
+        ></a-box>
 
+        <a-box
+            position="0 1.5 -3"
+            depth="50"
+            width="3"
+            height="0.1"
+            color="grey" 
+        ></a-box>
+
+        <a-box
+            position="0 1.5 -3"
+            depth="3"
+            width="50"
+            height="0.1"
+            color="grey" 
+        ></a-box>
+        
     </a-scene>
+
+    <script>
+    function goBack() {
+        // Option A: Go back to previous page
+        // window.history.back();
+
+        // Option B: Go directly to index.html
+        window.location.href = "index.html";
+    }
+    </script>
     
 </body>
 </html>

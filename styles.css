@@ -34,7 +34,7 @@ h2 {
 strong {
     color: rgb(255, 209, 58);
 }
-ul {
+.column {
     list-style-type: none;
     text-align: center;
     color: rgb(255, 255, 255);
@@ -60,12 +60,12 @@ li a{
 li a:hover {
     color: yellow;
 }
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+.pdfs {
+    column-count: 2;     /* makes two columns */
+}
+
+.pdfs li {
+    display: block;      /* must be block for column layout */
 }
 
 iframe {
